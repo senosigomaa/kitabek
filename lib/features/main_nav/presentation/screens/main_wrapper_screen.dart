@@ -9,6 +9,7 @@ import 'package:kitabek/features/explore/presentation/bloc/explore_bloc.dart'
     show ExploreBloc;
 import 'package:kitabek/features/explore/presentation/bloc/explore_event.dart';
 import 'package:kitabek/features/explore/presentation/screens/explore_screen.dart';
+import 'package:kitabek/features/scanner/presentation/screens/scanner_screen.dart';
 import 'package:kitabek/features/swaps/data/repositories/mock_swaps_repository.dart';
 import 'package:kitabek/features/swaps/presentation/bloc/swaps_bloc.dart';
 import 'package:kitabek/features/swaps/presentation/screens/swaps_screen.dart';
@@ -154,7 +155,21 @@ class _MainWrapperScreenState extends State<MainWrapperScreen> {
     return Transform.translate(
       offset: const Offset(0, -14),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (ctx) => ScannerScreen(
+                onBookScanned: (newBook) {
+                  // إضافة الكتاب فورياً لمكتبة المستخدم
+                  context
+                      .read<BookshelfBloc>()
+                      .add(AddBookToShelfEvent(newBook));
+                },
+              ),
+            ),
+          );
+        },
         child: Container(
           width: 54,
           height: 54,
