@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kitabek/features/bookshelf/presentation/bloc/bookshelf_bloc.dart';
+import 'package:kitabek/features/bookshelf/presentation/screens/bookshelf_screen.dart';
+import 'package:kitabek/features/chat/presentation/bloc/chat_bloc.dart';
+import 'package:kitabek/features/chat/presentation/screens/chat_list_screen.dart';
 import 'package:kitabek/features/explore/data/repositories/mock_book_repository.dart';
 import 'package:kitabek/features/explore/presentation/bloc/explore_bloc.dart'
     show ExploreBloc;
@@ -59,8 +63,14 @@ class _MainWrapperScreenState extends State<MainWrapperScreen> {
                 )..add(FetchSwapsEvent()),
                 child: const SwapsScreen(),
               ),
-              const Center(child: Text('الرسائل (قريباً)')),
-              const Center(child: Text('مكتبتي (قريباً)')),
+              BlocProvider(
+                create: (context) => ChatBloc()..add(LoadConversationsEvent()),
+                child: const ChatListScreen(),
+              ),
+              BlocProvider(
+                create: (context) => BookshelfBloc()..add(LoadMyBooksEvent()),
+                child: const BookshelfScreen(),
+              ),
             ],
           ),
 
