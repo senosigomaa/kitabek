@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/widgets/app_book_image.dart';
 import '../../data/models/book_model.dart';
 import '../widgets/swap_request_bottom_sheet.dart';
 
@@ -17,7 +17,6 @@ class BookDetailsScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          // AppBar شفاف مع زر الرجوع والمشاركة
           SliverAppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
@@ -42,13 +41,11 @@ class BookDetailsScreen extends StatelessWidget {
               ),
             ],
           ),
-
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
-                  // غلاف الكتاب بتوهج وثلاثي الأبعاد
                   Center(
                     child: Container(
                       decoration: BoxDecoration(
@@ -65,8 +62,8 @@ class BookDetailsScreen extends StatelessWidget {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(22),
-                        child: CachedNetworkImage(
-                          imageUrl: book.coverUrl,
+                        child: AppBookImage(
+                          imagePath: book.coverUrl,
                           height: 250,
                           width: 170,
                           fit: BoxFit.cover,
@@ -74,10 +71,7 @@ class BookDetailsScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-
                   const SizedBox(height: 20),
-
-                  // عنوان الكتاب والكاتب
                   Text(
                     book.title,
                     textAlign: TextAlign.center,
@@ -95,14 +89,12 @@ class BookDetailsScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-
                   const SizedBox(height: 24),
-
-                  // كارت بيانات المالك والمسافة
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: isDark ? AppColors.darkCardBg : AppColors.lightCardBg,
+                      color:
+                          isDark ? AppColors.darkCardBg : AppColors.lightCardBg,
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                         color: isDark
@@ -158,7 +150,8 @@ class BookDetailsScreen extends StatelessWidget {
                           ],
                         ),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 6),
                           decoration: BoxDecoration(
                             color: AppColors.neonEmerald.withOpacity(0.12),
                             borderRadius: BorderRadius.circular(10),
@@ -175,10 +168,7 @@ class BookDetailsScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-
                   const SizedBox(height: 24),
-
-                  // نبذة عن حالة الكتاب
                   Align(
                     alignment: Alignment.centerRight,
                     child: Column(
@@ -205,10 +195,7 @@ class BookDetailsScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-
                   const SizedBox(height: 40),
-
-                  // زر الإجراء: تقديم طلب المقايضة
                   SizedBox(
                     width: double.infinity,
                     height: 56,
@@ -218,7 +205,8 @@ class BookDetailsScreen extends StatelessWidget {
                           context: context,
                           isScrollControlled: true,
                           backgroundColor: Colors.transparent,
-                          builder: (context) => SwapRequestBottomSheet(targetBook: book),
+                          builder: (context) =>
+                              SwapRequestBottomSheet(targetBook: book),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -237,7 +225,8 @@ class BookDetailsScreen extends StatelessWidget {
                           SizedBox(width: 8),
                           Text(
                             'طلب مقايضة هذا الكتاب',
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w800),
                           ),
                         ],
                       ),
@@ -268,7 +257,8 @@ class BookDetailsScreen extends StatelessWidget {
           color: isDark ? AppColors.darkCardBg : AppColors.lightCardBg,
           shape: BoxShape.circle,
           border: Border.all(
-            color: isDark ? AppColors.darkCardBorder : AppColors.lightCardBorder,
+            color:
+                isDark ? AppColors.darkCardBorder : AppColors.lightCardBorder,
           ),
         ),
         child: Icon(icon, size: 20),

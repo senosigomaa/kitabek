@@ -3,56 +3,78 @@ import '../models/book_model.dart';
 class MockBookRepository {
   Future<List<BookModel>> getNearbyBooks() async {
     // محاكاة تأخير الشبكة لإظهار الـ Shimmer
-    await Future.delayed(const Duration(milliseconds: 700));
+    await Future.delayed(const Duration(milliseconds: 600));
 
     return const [
       BookModel(
         id: '1',
-        isbn: '9780132350884',
-        title: 'Clean Code',
-        author: 'Robert C. Martin',
-        coverUrl: 'https://images.unsplash.com/photo-1532012164546-f432f2e3777a?auto=format&fit=crop&q=80&w=300',
-        ownerName: 'أحمد يوسف',
-        distanceKm: 0.8,
-        swapType: SwapType.permanent,
-        condition: 'شبه جديد',
-        description: 'نسخة أصلية بحالة ممتازة دون أي علامات. متاح للمقايضة بكتب معمارية برمجيات.',
-      ),
-      BookModel(
-        id: '2',
-        isbn: '9781847941831',
-        title: 'Atomic Habits',
-        author: 'James Clear',
-        coverUrl: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=300',
-        ownerName: 'عمر كمال',
-        distanceKm: 1.2,
-        swapType: SwapType.temporary,
-        condition: 'ممتاز',
-        description: 'كتاب العادات الذرية غني عن التعريف، متاح للإعارة لمدة أسبوعين أو شهر.',
-      ),
-      BookModel(
-        id: '3',
         isbn: '9789770914830',
         title: 'ثلاثية غرناطة',
         author: 'رضوى عاشور',
-        coverUrl: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=300',
+        coverUrl:
+            'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=400',
         ownerName: 'سارة حسن',
-        distanceKm: 2.0,
+        distanceKm: 0.6,
+        swapType: SwapType.permanent,
+        condition: 'ممتاز',
+        description:
+            'الملحمة الأندلسية الشهيرة لرضوى عاشور، طبعة دار الشروق بحالة ممتازة دون أي تدوينات.',
+      ),
+      BookModel(
+        id: '2',
+        isbn: '9789770260487',
+        title: 'أولاد حارتنا',
+        author: 'نجيب محفوظ',
+        coverUrl:
+            'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=400',
+        ownerName: 'أحمد يوسف',
+        distanceKm: 0.9,
         swapType: SwapType.temporary,
+        condition: 'شبه جديد',
+        description:
+            'رواية نوبل الشهيرة، متاحة للإعارة لمدة أسبوعين أو للمقايضة مع أحد أعمال يوسف إدريس.',
+      ),
+      BookModel(
+        id: '3',
+        isbn: '9789770921470',
+        title: 'يوتوبيا',
+        author: 'أحمد خالد توفيق',
+        coverUrl:
+            'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=400',
+        ownerName: 'عمر كمال',
+        distanceKm: 1.4,
+        swapType: SwapType.permanent,
         condition: 'جيد جداً',
-        description: 'رواية تاريخية أدبية رائعة بحالة جيدة جداً، مقايضة بروايات أدبية أخرى.',
+        description:
+            'ديستوبيا مصرية بامتياز من العراب، طبعة مميزة ومطلوب مقايضتها مع رواية في ممر الفئران.',
       ),
       BookModel(
         id: '4',
-        isbn: '9780201616224',
-        title: 'The Pragmatic Programmer',
-        author: 'Andrew Hunt & David Thomas',
-        coverUrl: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=300',
+        isbn: '9789771420880',
+        title: 'رحلتي من الشك للبليد',
+        author: 'مصطفى محمود',
+        coverUrl:
+            'https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&q=80&w=400',
         ownerName: 'إسلام محمد',
-        distanceKm: 0.5,
-        swapType: SwapType.permanent,
+        distanceKm: 2.1,
+        swapType: SwapType.temporary,
         condition: 'كالجديد',
-        description: 'مرجع أساسي لكل مطور. النسخة الإنجليزية بحالة المصنع.',
+        description:
+            'كتاب فكري وفلسفي ملهم، متاح للإعارة لمحبي كتب الدكتور مصطفى محمود.',
+      ),
+      BookModel(
+        id: '5',
+        isbn: '9789770932841',
+        title: 'وكالة عطية',
+        author: 'خيري شلبي',
+        coverUrl:
+            'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=400',
+        ownerName: 'محمود سامي',
+        distanceKm: 2.8,
+        swapType: SwapType.permanent,
+        condition: 'ممتاز',
+        description:
+            'أيقونة الحارة المصرية وعالم المهمشين لخيري شلبي، بحالة نظيفة جداً.',
       ),
     ];
   }

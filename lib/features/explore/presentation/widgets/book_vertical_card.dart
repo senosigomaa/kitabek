@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/widgets/app_book_image.dart';
 import '../../data/models/book_model.dart';
 
 class BookVerticalCard extends StatelessWidget {
@@ -40,8 +40,8 @@ class BookVerticalCard extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(14),
-                  child: CachedNetworkImage(
-                    imageUrl: book.coverUrl,
+                  child: AppBookImage(
+                    imagePath: book.coverUrl,
                     height: 195,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -55,7 +55,9 @@ class BookVerticalCard extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: isDark ? Colors.black87 : Colors.white.withOpacity(0.9),
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: AppColors.neonEmerald.withOpacity(0.4)),
+                      border: Border.all(
+                        color: AppColors.neonEmerald.withOpacity(0.4),
+                      ),
                     ),
                     child: Text(
                       '${(book.distanceKm * 1000).toInt()} م',
