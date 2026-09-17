@@ -1,0 +1,37 @@
+name: kitabek
+description: "A peer-to-peer book swap and exchange application."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State Management & Equatable
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+
+  # Fonts & Icons
+  google_fonts: ^6.2.1
+  lucide_icons_flutter: ^3.0.5
+
+  # UI Tools & Images
+  cached_network_image: ^3.4.1
+  shimmer: ^3.0.0
+
+  # Hardware (سنعيده عند اختبار الكاميرا على موبايل حقيقي)
+  # mobile_scanner: ^5.2.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
