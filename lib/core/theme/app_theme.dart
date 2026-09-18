@@ -3,14 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
 class AppTheme {
-  // ثيم الوضع الداكن
+  // ثيم الوضع الداكن (Cyber Dark)
   static ThemeData get darkTheme {
-    return ThemeData(
-      brightness: Brightness.dark,
+    final baseDark = ThemeData.dark();
+    return baseDark.copyWith(
       scaffoldBackgroundColor: AppColors.darkAppBg,
       primaryColor: AppColors.neonEmerald,
       cardColor: AppColors.darkCardBg,
-      textTheme: GoogleFonts.cairoTextTheme(ThemeData.dark().textTheme),
+      // تطبيق خط زين على نصوص التطبيق بالكامل
+      textTheme: GoogleFonts.zainTextTheme(baseDark.textTheme),
       colorScheme: const ColorScheme.dark(
         primary: AppColors.neonEmerald,
         secondary: AppColors.warmAmber,
@@ -21,14 +22,15 @@ class AppTheme {
     );
   }
 
-  // ثيم الوضع الفاتح
+  // ثيم الوضع الفاتح (Clean Light)
   static ThemeData get lightTheme {
-    return ThemeData(
-      brightness: Brightness.light,
+    final baseLight = ThemeData.light();
+    return baseLight.copyWith(
       scaffoldBackgroundColor: AppColors.lightAppBg,
       primaryColor: AppColors.neonEmerald,
       cardColor: AppColors.lightCardBg,
-      textTheme: GoogleFonts.cairoTextTheme(ThemeData.light().textTheme),
+      // تطبيق خط زين على نصوص التطبيق بالكامل
+      textTheme: GoogleFonts.zainTextTheme(baseLight.textTheme),
       colorScheme: const ColorScheme.light(
         primary: AppColors.neonEmerald,
         secondary: AppColors.warmAmber,
