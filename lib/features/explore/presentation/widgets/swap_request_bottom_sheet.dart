@@ -17,15 +17,15 @@ class _SwapRequestBottomSheetState extends State<SwapRequestBottomSheet> {
   final List<Map<String, String>> myBooks = [
     {
       'title': 'عالم صوفي',
-      'cover': 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=200',
+      'cover': 'https://m.media-amazon.com/images/I/71YQFjfwc5L._AC_UF894,1000_QL80_.jpg',
     },
     {
       'title': 'Refactoring',
-      'cover': 'https://images.unsplash.com/photo-1532012164546-f432f2e3777a?auto=format&fit=crop&q=80&w=200',
+      'cover': 'https://m.media-amazon.com/images/I/71MQRy0Rj4L._AC_UF1000,1000_QL80_.jpg',
     },
     {
       'title': 'Flutter In Action',
-      'cover': 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=200',
+      'cover': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc0Ai9HdTg6cqiQH2n-Ot3k5hJNgCtutVKyOtnyT-ESA&s=10',
     },
   ];
 

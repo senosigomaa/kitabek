@@ -53,7 +53,8 @@ class BookshelfBloc extends Bloc<BookshelfEvent, BookshelfState> {
       isbn: '9789770914830',
       title: 'عالم صوفي',
       author: 'جوستاين غاردر',
-      coverUrl: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=300',
+      coverUrl:
+          'https://m.media-amazon.com/images/I/71YQFjfwc5L._AC_UF894,1000_QL80_.jpg',
       ownerName: 'أنا',
       distanceKm: 0.0,
       swapType: SwapType.permanent,
@@ -65,7 +66,8 @@ class BookshelfBloc extends Bloc<BookshelfEvent, BookshelfState> {
       isbn: '9780134757599',
       title: 'Refactoring',
       author: 'Martin Fowler',
-      coverUrl: 'https://images.unsplash.com/photo-1532012164546-f432f2e3777a?auto=format&fit=crop&q=80&w=300',
+      coverUrl:
+          'https://m.media-amazon.com/images/I/71MQRy0Rj4L._AC_UF1000,1000_QL80_.jpg',
       ownerName: 'أنا',
       distanceKm: 0.0,
       swapType: SwapType.temporary,
